@@ -1,0 +1,57 @@
+
+энкод хийх shellcode - "\x66\x81\xca\xff\x0f\x42\x52\x6a"
+
+4 byte хэсэг болгон хуваана
+\x66\x81\xca\xff - Reverse order	-	\xff\xca\x81\x66
+\x0f\x42\x52\x6a - Reverse order	-	\x6a\x52\x42\x0f
+
+
+1.	0-0xffca8166=FFFFFFFF00357E9A
+2.	0-0x6a52420f=FFFFFFFF95ADBDF1
+
+
+1.
+
+A 	B 	C 	D
+
+9A	7A	10	10 			
+						
+7E	5A	20	4			
+
+35	20	5	10
+
+00	50	50	60
+
+SUB EAX, 0x50205A7A
+SUB EAX, 0x50052010
+SUB EAX, 0x60100410
+PUSH EAX
+
+
+2.
+
+A 	B 	C 	D
+
+F1 	7A	70	7
+
+BD	5A	60	3		
+
+AD 	7A	30	3	
+
+95	50	40	5
+
+SUB EAX, 0x507A5A7A
+SUB EAX, 0x40306070
+SUB EAX, 0x05030307
+PUSH EAX
+
+
+
+
+
+
+
+
+
+
+
